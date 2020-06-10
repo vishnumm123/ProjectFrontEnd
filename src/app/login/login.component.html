@@ -1,0 +1,174 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" routerLink='/home'>Home</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav  ml-auto">
+    
+    <!-- <li class="nav-item">
+      <a class="nav-link" routerLink='/login'>Login</a>
+    </li> -->
+   
+  </ul>
+</nav>
+
+<!--Registration Form-->
+
+
+<div *ngIf="log_type=='registration'" class="container register">
+  <div class="row">
+      <div class="col-md-3 register-left">
+          <!-- <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/> -->
+          <h3>Welcome</h3>
+          <p>Already have an account ?</p>
+          <input type="submit" name="" (click)="LoginReg('login')" value="Login" /><br/>
+      </div>
+      <div class="col-md-9 register-right">
+          <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+              <li class="nav-item">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Buyer</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Seller</a>
+              </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <h3 class="register-heading">Buyer Registration</h3>
+
+                        <form  class=" row register-form " (submit)="Register($event,'buyer')">
+                          <div class="col-md-6 col-6">
+
+                          <div class="form-group">
+                             <input type="text" class="form-control"  placeholder="first name" id="fname" required >
+                          </div>
+                          <div class="form-group">
+                             <input type="text" class="form-control"  placeholder="last name" id="lname" required >
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control"  placeholder="age" id="age" required>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 col-6">
+                          <div class="form-group">
+                            <input type="text" class="form-control"  placeholder="phone"  id="phone" required>
+                          </div>
+                          
+                          <div class="form-group">
+                             <input type="email" class="form-control"  placeholder="email" id="email" required>
+                          </div>
+                          <div class="form-group">
+                            <input type="password" class="form-control"  placeholder="password"  id="passwordreg" required>
+                          </div>
+
+                        
+                          <input type="submit" class="btnRegister" value="submit">
+
+                        </div>
+                        </form>
+   
+              </div>
+              <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <h3  class="register-heading">Seller Registration</h3>
+
+                  <form class="row register-form" (submit)="Register($event,'seller')">
+
+
+                    <div class="col-md-6 col-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="first name" id="fname_s"  required>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" placeholder="last name" id="lname_s"  required>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" placeholder="age" id="age_s" required>
+                     </div>
+                    </div>
+                    <div class="col-md-6 col-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="phone" id="phone_s" required>
+                         
+                      </div>
+                      <div class="form-group">
+                         <input type="email" class="form-control" placeholder="email" id="email_s" required>
+                      </div>
+                      <div class="form-group">
+                         <input type="password" class="form-control" placeholder="password"  id="passwordreg_s" required>
+                      </div>
+  
+                      
+                        <input type="submit" class="btnRegister" value="submit">
+                    </div>
+                    
+                  
+                  </form> 
+
+
+            
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+
+<!-- Login Template -->
+
+
+
+
+
+<div *ngIf="log_type=='login'" class="container register">
+  <div class="row">
+      <div class="col-md-3 register-left">
+          <!-- <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/> -->
+          <h3>Welcome</h3>
+          <p>Don't have an account ?</p>
+          <input type="submit" name="" (click)="LoginReg('registration')" value="Sign up"/><br/>
+      </div>
+      <div class="col-md-9 register-right">
+          <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <h3 class="register-heading">Login</h3>
+
+
+                  <form class="row register-form"  (submit)='Login($event)'>
+                    <div class="col-md-12 col-12">
+                     <div class="form-group">
+                       <input type="text" class="form-control" placeholder="Username" id="username" required>
+                   </div>
+                   <div class="form-group">
+                     <input type="password" class="form-control" placeholder="Password" id="password" required>
+                 </div>
+                    </div>
+                    
+                     
+                     <input type="submit" class="btnRegister" value="submit">
+                   </form>
+  
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

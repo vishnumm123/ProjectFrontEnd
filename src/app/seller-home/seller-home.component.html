@@ -1,0 +1,30 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" routerLink='/home'>Home</a>
+    
+    <!-- Links -->
+    <ul class="navbar-nav  ml-auto">
+
+        <li class="nav-item">
+            <a *ngIf="SellerData" class="nav-link">Hello {{SellerData[0].firstname}}</a>
+          </li>
+
+      <li class="nav-item">
+        <a class="nav-link cursor" (click)="Logout()">Logout</a>
+      </li>
+     
+    </ul>
+  </nav>
+
+
+
+  <h1 class="head" *ngIf="SellerData" >Welcome {{SellerData[0].firstname}}</h1>
+
+
+
+  <ul  *ngIf="SellerData" >
+    <li>Age : {{SellerData[0].age}}</li>
+    <li>Email : {{SellerData[0].email}}</li>
+    <li>Phone : {{SellerData[0].phone}}</li>
+  </ul> 

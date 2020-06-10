@@ -1,0 +1,22 @@
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" routerLink='/home'>Home</a>
+    
+    <!-- Links -->
+    <ul class="navbar-nav  ml-auto">
+        <li class="nav-item">
+            <a *ngIf="buyerdata" class="nav-link" routerLink='/buyer-home'>Hello {{buyerdata[0].firstname}} (Buyer Home)</a>
+          </li>
+        <li class="nav-item">
+            <a *ngIf="SellerData" class="nav-link" routerLink='/seller-home'>Hello {{SellerData[0].firstname}} (Seller Home)</a>
+          </li>
+      <li class="nav-item">
+        <a  *ngIf="!buyerdata && !SellerData" class="nav-link" routerLink='/login'>Login</a>
+      </li>
+     
+    </ul>
+  </nav>
+
+
